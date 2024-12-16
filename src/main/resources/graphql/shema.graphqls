@@ -1,0 +1,24 @@
+type Commande{
+    id: ID
+    dateCommande: String
+    montantTotal: Float
+    clientId: Float
+}
+
+type Client{
+    id:ID
+    nom:String
+    Commande:[Commande]
+}
+
+type Query {
+    GetAllCommandes:Commande
+    GetCommandeById(id:ID):Commande
+    GetAllClients:Client
+}
+
+type Mutation{
+    CreateCommande(dateCommande:String,montantTotal:Float,clientId:Float):Commande
+    ModifyCommande(dateCommande:String,montantTotal:Float,clientId:Float):Commande
+    DeleteCommande(id:Float)
+}
